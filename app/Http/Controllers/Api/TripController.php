@@ -70,4 +70,29 @@ class TripController extends Controller
     {
         //
     }
+
+     public function searchTrip(Request $request)
+    {
+        $departure_time = request('departure_time');
+      
+        $route = request('route');
+        $trips = DB::table('trips')
+                ->select('trips.*')
+                ->where('trips.departure_time', '=', $departure_time)
+                ->where('trips.route_id', '=', $route)
+                ->get();
+            if ( count($trips) > 0) {
+                return response()->json([
+            'trips' => $trips 
+             ]);   
+            }else{
+                 return response()->json([
+            'trips' => " No ticket available on the selected date. Please try searching for other dates."
+             ]);   
+            }
+           
+       
+     
+             
+    }
 }
