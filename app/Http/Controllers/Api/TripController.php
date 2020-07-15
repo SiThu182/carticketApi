@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Trip;
 use App\Http\Resources\TripResource;
+
+use Illuminate\Support\Facades\DB;
 class TripController extends Controller
 {
     /**
