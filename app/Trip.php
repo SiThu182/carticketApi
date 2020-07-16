@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trip extends Model
 {
-    protected $fillable = ['class_name','departure_time','arrival_time','local_price','foregin_price','car_id','route_id'];
+    protected $fillable = ['class_name','departure_time','arrival_time','local_price','foregin_price','car_id','route_id','status'];
 
     public function routes()
 {

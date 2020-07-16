@@ -59,7 +59,29 @@ class TripController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $request->validate([
+            'class_name' => 'required|min:3|max:30',
+            'local_price' => 'required|min:2|max:30',
+            'foregin_price' => 'required|min:2|max:30',
+            'departure_time' => 'required',
+            'arrival_time' => 'required',
+            'car' => 'required',
+            'route' => 'required'
+        ]);
+
+
+        $trip = Trip::find($id);
+
+        $trip->class_name = $request->class_name;
+        $trip->local_price = $request->local_price;
+        $trip->foregin_price = $request->foregin_price;
+        $trip->departure_time = $request->departure_time;
+        $trip->arrival_time = $request->arrival_time;
+        $trip->car_id = $request->car;
+        $trip->route_id = $request->route;
+        $trip->status = $request->status; 
+        $trip->save(); 
+        return redirect()->route('trip.index');
     }
 
     /**
