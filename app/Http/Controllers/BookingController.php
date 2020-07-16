@@ -17,8 +17,8 @@ class BookingController extends Controller
     {
        
         $trips = Trip::all();
-        // $bookings = Booking::all();
-
+        $bookings = Booking::all();
+        $cars = Car::all();
         return view('booking',compact('cars','trips','bookings'));
     }
 

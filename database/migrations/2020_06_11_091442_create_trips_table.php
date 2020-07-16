@@ -20,8 +20,9 @@ class CreateTripsTable extends Migration
             $table->string('arrival_time','151');
             $table->string('local_price','50');
             $table->string('foregin_price','50');
-              $table->unsignedBigInteger('car_id');
+            $table->unsignedBigInteger('car_id');
             $table->unsignedBigInteger('route_id');
+            $table->string('status','30');
             $table->timestamps();
         });
     }

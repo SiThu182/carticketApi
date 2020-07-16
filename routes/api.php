@@ -22,4 +22,4 @@ Route::apiResource('location','Api\LocationController');
 Route::apiResource('car','Api\CarController');
 Route::apiResource('route','Api\RouteController');
 Route::apiResource('trip','Api\TripController');
-Route::post('/searchTrip','TripController@searchTrip')->name('searchTrip');
+Route::post('/searchTrip','Api\TripController@searchTrip')->name('searchTrip');

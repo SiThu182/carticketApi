@@ -20,7 +20,7 @@ class CreateBookingsTable extends Migration
             $table->unsignedBigInteger('trip_id');
             $table->string('b_date','50');
             $table->string('seat_no','30');
-            $table->number('total_price','30');
+            $table->string('total_price','30');
             $table->timestamps();
         });
     }
