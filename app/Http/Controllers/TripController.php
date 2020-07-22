@@ -143,7 +143,7 @@ class TripController extends Controller
         $route = request('route');
         $trips = DB::table('trips')
                 ->select('trips.*')
-                ->where('trips.departure_time', '=', $departure_time)
+                ->where('trips.departure_time',,'like','%'.$departure_time)
                 ->where('trips.route_id', '=', $route)
                 ->get();
             if ( count($trips) > 0) {

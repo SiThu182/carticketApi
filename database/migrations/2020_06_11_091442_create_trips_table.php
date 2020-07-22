@@ -22,7 +22,7 @@ class CreateTripsTable extends Migration
             $table->string('foregin_price','50');
             $table->unsignedBigInteger('car_id');
             $table->unsignedBigInteger('route_id');
-            $table->string('status','30');
+            $table->string('status','30')->nullable();
             $table->timestamps();
         });
     }
